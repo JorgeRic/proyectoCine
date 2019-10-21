@@ -1,0 +1,26 @@
+<h3>Añadir nueva pelicula a la lista:</h3> 
+
+<form action="/peliculas" method="POST">
+  <label>Ingrese nuevo titulo:</label>
+    <input type="text" name="titulo" required>
+  <label>Director:</label>
+    <input type="text" name="director">
+  <label>Actores:</label>
+    <input type="text" name="actores">
+  <label>Año:</label>
+    <input type="number" name="anio">
+  <label>Genero:</label>
+    <select name="genero" required>
+      <option value="">Elegir</option>
+      <option value="comedia">Comedia</option>
+      <option value="drama">Drama</option>
+      <option value="ciencia-ficcion">Ciencia-ficcion</option>
+      <option value="historica">Historica</option>
+      <option value="aventuras">Aventura</option>
+      <option value="terror">Terror</option>
+      
+    </select>
+<button type="submit">Crear nueva pelicula</button>
+
+</form>
+<a href="/peliculas"><button>Volver al listado de peliculas</button></a>

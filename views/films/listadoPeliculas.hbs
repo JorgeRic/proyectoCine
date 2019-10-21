@@ -1,0 +1,21 @@
+<h1>Lista de peliculas</h1>
+
+<form action="/peliculas/search" method="GET"> 
+  <label for="titulo">Buscar pelicula</label>
+  <input type="text" name="titulo" id="titulo" placeholder="buscar por titulo">
+  <button type="submit">Buscar</button>
+</form>
+<ul>
+{{#each peliculas}}
+  <li>
+    <h3>Titulo: {{titulo}}</h3>
+    {{!-- <img src="{{image}} alt="{{titulo}}"> --}}
+   
+  <a href="/peliculas/detail/{{_id}}"><button type="submit">Ver datos</button></a>
+ 
+  </li>
+{{/each}}
+</ul>
+{{!-- <a href="/peliculas/crearPelicula"><button>Crear nueva pelicula</button></a> --}}
+
+<a href="/"><button>Volver a pagina principal</button></a>

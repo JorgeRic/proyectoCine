@@ -1,0 +1,19 @@
+<h1>Lista de actores / actrices</h1>
+
+<form action="/actores/search" method="GET">
+<label for="nombre">Buscar actor</label>
+<input type="text" name="nombre" id="nombre" placeholder="buscar por nombre">
+<button type="submit">Buscar</button>
+</form>
+<ul>
+{{#each listaActores}}
+  <li>
+    <h3>Nombre: {{nombre}}</h3>
+    {{!-- <img src="{{image}}" alt="{{nombre}}"></img> --}}
+  <a href="/actores/about/{{_id}}"><button type="submit">Ver datos</button></a>
+ 
+  </li>
+{{/each}}
+</ul>
+<a href="/"><button>Volver a pagina principal</button></a>
+{{!-- <a href="/actores/new"><button>Crear nuevo actor</button></a> --}}
