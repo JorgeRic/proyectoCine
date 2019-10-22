@@ -1,19 +1,26 @@
-<h3>Crear nuevo actor / actriz</h3>
+<div class="centrar"> 
+  <h3>Crear nuevo actor / actriz</h3>
+</div>
 
 <form method="POST" action="/actores" enctype="multipart/form-data">
-  <label>Ingrese nombre:
-    <input type="text" id="nombre" name="nombre">
-  </label>
-  <label>Ingrese nacionalidad:
-    <input type="text" id="nacionalidad" name="nacionalidad">
-  </label>
-  <label>Ingrese pelicula:
-    <input type="text" id="principalPelicula" name="principalPelicula">
-  </label>
+  <div class="crear">
+    <label>Ingrese nombre:
+      <input type="text" name="nombre" class="input margin">
+    </label>
+    <label>Ingrese nacionalidad:
+      <input type="text" name="nacionalidad" class="input margin">
+    </label>
+    <label>Ingrese pelicula:
+      <input type="text" name="principalPelicula" class="input margin">
+    </label>
+    <label>
+      <input type="file" name="photo" class="input margin select">
+    </label>
 
-    <input type="file" name="photo" />
-
-  <button type="submit">Crear</button>
-
+    <button type="submit"class="button-crear">Crear</button>
+  </div>
 </form>
-<a href="/actores"><button>Volver a lista de actores</button></a>
+<div class="centrar">
+<a href="/actores" ><button class="button-index">Volver a lista de actores</button></a>
+</div>
+  

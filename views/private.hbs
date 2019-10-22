@@ -1,34 +1,42 @@
 
 <p>Bienvenido {{currentUser.username}} a tu pagina privada</p>
 
-<a href="/"><button>Volver a pagina principal</button></a>
-<h4>Peliculas subidas:</h4>
+<div class="centrar">
+  <a href="/"><button class="button-index">Volver a pagina principal</button></a>
+</div>
+<h2 class="title">Peliculas subidas:</h2>
 {{#each userPeliculas.peliculas}}
-<article>
-  <h5>{{titulo}}</h5>
-  <img src ="{{image}}" alt="{{titulo}}">
-    <a href="/peliculas/detail/{{_id}}"><button type="submit">Ver datos</button></a>
-    <a href="/peliculas/detail/{{_id}}/edit"><button>Modificar datos</button></a>
-    <a href="/peliculas/detail/{{_id}}/delete"><button>X Eliminar</button></a>
+<article class="article-private">
+  <h3>{{titulo}}</h3>
+  <img src ="{{image}}" alt="{{titulo}}" class="fotos">
+    <a href="/peliculas/detail/{{_id}}"><button type="submit" class="verDatos">Ver datos</button></a>
+    <a href="/peliculas/detail/{{_id}}/edit"><button class="verDatos">Modificar datos</button></a>
+    <a href="/peliculas/detail/{{_id}}/delete"><button class="button-eliminar">X Eliminar</button></a>
 </article>
 {{/each}}
 
-<h3>Añadir nueva pelicula a la lista:</h3> 
-<a href="/peliculas/crearPelicula"><button>Crear</button></a>
-<a href="/peliculas"><button>Volver al listado de peliculas</button></a>
-<h4>Artistas subidos:</h4>
+<h3 class="title">Añadir nueva pelicula a la lista:</h3> 
+<div class="centrar">
+  <a href="/peliculas/crearPelicula"><button class="verDatos title">Crear</button></a>
+  <a href="/peliculas"><button class="button-index">Volver al listado de peliculas</button></a>
+</div>
+<h2 class="title">Artistas subidos:</h2>
 {{#each userActores.actores}}
-<article>
-  <h5>{{nombre}}</h5>
-  <img src="{{image}}" alt="{{nombre}}"></img>
-    <a href="/actores/about/{{_id}}"><button type="submit">Ver datos</button></a>
-    <a href ="/actores/about/{{_id}}/edit"><button>Modificar datos</button></a> 
-    <a href ="/actores/about/{{_id}}/delete"><button>X Eliminar</button></a> 
+<article class="article-private">
+  <h3>{{nombre}}</h3>
+  <img src="{{image}}" alt="{{nombre}}" class="fotos"></img>
+    <a href="/actores/about/{{_id}}"><button type="submit" class="verDatos">Ver datos</button></a>
+    <a href ="/actores/about/{{_id}}/edit"><button class="verDatos">Modificar datos</button></a> 
+    <a href ="/actores/about/{{_id}}/delete"><button class="button-eliminar">X Eliminar</button></a> 
 </article>
 {{/each}}
-<h3>Añadir nuevo actor/actriz a la lista:</h3> 
-<a href="/actores/new"><button>Crear</button></a>
-<a href="/actores"><button class="button">Volver al listado de artistas</button></a>
+<h3 class="title">Añadir nuevo actor/actriz a la lista:</h3> 
+<div class="centrar">
+
+  <a href="/actores/new"><button class="verDatos">Crear</button></a>
+  <a href="/actores"><button class="button-index">Volver al listado de artistas</button></a>
+
+</div>
 
 
 

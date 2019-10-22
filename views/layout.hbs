@@ -7,39 +7,47 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  {{!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css"> --}}
 </head>
 
 <body>
   <header>
     <nav>
-      <ul>
-        
-        <li><a href='/'>Home</a></li>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO5yPeFySqFKC70s6uZKi90C9XplOIEpg0T92sMOJB7pVer4b2NA" class="logo" alt="logo">
+      <ul class="auth">
+        <div id="layout">
+          <li>
+            <a href='/' class="listAuth">Home</a>
+          </li>
         {{#unless currentUser}}
-        <li><a href='/auth/signup'>Signum</a></li>
-        <li><a href='/auth/login'>Login</a></li>
+          <li>
+            <a href='/auth/signup'class="listAuth" >Signum</a>
+          </li>
+          <li>
+            <a href='/auth/login' class="listAuth">Login</a>
+          </li>
         {{/unless}}
         {{#if currentUser}}
       
-        <form action='/auth/logout' method='POST'>
-        <button type="submit">Logout</button>
-        </form>
       
-      <li>
-        <a href="users/private"> private page</a>
-      </li>
+        <form action='/auth/logout' method='POST'>
+        <button type="submit" class="button-nav">Logout</button>
+        </form>
+          <li>
+            <a href="users/private" class="listAuth"> private page</a>
+          </li>
         {{/if}}
+        </div>
       </ul>
     </nav>
     
       </header>
        {{{body}}}
        {{!-- Librearia axios - Hace que nuestro usuario vea de forma inmediata lo que sube --}}
-       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-       
+       {{!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> --}}
+       <footer></footer>
       </body>
   
   

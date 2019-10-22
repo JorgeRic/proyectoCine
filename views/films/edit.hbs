@@ -1,23 +1,31 @@
-<h1>Modificar pelicula</h1>
 
-    <h3>Titulo: {{titulo}}</h3>
-    <p>Director: {{director}}</p>
-    <p>Actores: {{actores}}</p>
-    <p>Genero: {{genero}}</p>
-    <p>Año: {{anio}}</p>
-    <p>Sinopsis: {{sinopsis}}</p>
+<article class="article-modificar">
+    <h3 class="centrar">Titulo: {{titulo}}</h3>
+    <p><B>Director:</B> {{director}}</p>
+    <p><B>Actores:</B></p>
+    <p>{{actores}}</p>
+    <p><B>Genero:</B> {{genero}}</p>
+    <p><B>Año:</B> {{anio}}</p>
+    <p><B>Sinopsis:</B></p>
+    <p>{{sinopsis}}</p>
+</article>
+
+<div class="centrar">
+  <h2>Modificar pelicula</h2>
+</div>
 
 <form action="/peliculas/{{id}}" method="POST">
+<div class="crear">
   <label>Titulo:</label>
-    <input type="text" name="titulo" value="{{titulo}}">
+    <input type="text" name="titulo" value="{{titulo}}" class="input margin color">
   <label>Director:</label>
-    <input type="text" name="director" value="{{director}}">
+    <input type="text" name="director" value="{{director}}" class="input margin color">
   <label>Actores:</label>
-    <input type="text" name="actores" value="{{actores}}">
+    <input type="text" name="actores" value="{{actores}}" class="input margin color">
   <label>Año:</label>
-    <input type="number" name="anio" value="{{anio}}">
+    <input type="number" name="anio" value="{{anio}}" class="input margin color">
   <label>Genero:</label>
-    <select name="genero" required>
+    <select name="genero" required class="input margin">
       <option value="">Elegir</option>
       <option value="comedia">Comedia</option>
       <option value="drama">Drama</option>
@@ -27,8 +35,11 @@
       <option value="terror">Terror</option>
     </select>
   <label>Psinopsis:</label>
-    <input type="text" name="sinopsis" value="{{sinopsis}}">
-<button type="submit">Modificar datos</button>
-
+    <input type="text" name="sinopsis" value="{{sinopsis}}" class="sinopsis margin color">
+<button type="submit" class="button-crear">Modificar datos</button>
+</div>
 </form>
-<a href="/peliculas"><button>Volver al listado de peliculas</button></a>
+<div class="centrar">
+
+<a href="/peliculas" ><button class="button-index">Volver al listado de peliculas</button></a>
+</div>

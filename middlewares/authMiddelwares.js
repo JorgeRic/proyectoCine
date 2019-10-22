@@ -16,9 +16,8 @@ const isFormFilled = (req, res, next) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
-    // setTimeout(() => {
     req.flash('errorFormNotFilled', 'All fields are required');
-    // }, 2000);
+
     if (username) {
       req.flash('errorDataForm', username);
     }
@@ -27,8 +26,10 @@ const isFormFilled = (req, res, next) => {
   next();
 };
 
+
 module.exports = {
   isLoggedIn,
   isNotLoggedIn,
-  isFormFilled
+  isFormFilled,
+
 };

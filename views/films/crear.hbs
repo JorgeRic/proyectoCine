@@ -1,31 +1,36 @@
-<h3>Añadir nueva pelicula a la lista:</h3> 
+<div class="centrar">
+  <h3 class="titulo">Añadir nueva pelicula a la lista:</h3> 
+</div>
 
-<form action="/peliculas" method="POST" enctype="multipart/form-data">
-  <label>Ingrese nuevo titulo:</label>
-    <input type="text" name="titulo" required>
-  <label>Director:</label>
-    <input type="text" name="director">
-  <label>Actores:</label>
-    <input type="text" name="actores">
-  <label>Año:</label>
-    <input type="number" name="anio">
-  <label>Genero:</label>
-    <select name="genero" required>
-      <option value="">Elegir</option>
-      <option value="comedia">Comedia</option>
-      <option value="drama">Drama</option>
-      <option value="ciencia-ficcion">Ciencia-ficcion</option>
-      <option value="historica">Historica</option>
-      <option value="aventuras">Aventura</option>
-      <option value="terror">Terror</option>
-    </select>
-    <label>Sinopsis:</label>
-    <input type="text" name="sinopsis">
+  <form action="/peliculas" method="POST" enctype="multipart/form-data">
+    <div class="crear">
+      <label>Ingrese nuevo titulo:</label>
+        <input type="text" name="titulo" class="input margin">
+      <label>Director:</label>
+        <input type="text" name="director" class="input margin">
+      <label>Actores:</label>
+        <input type="text" name="actores" class="input margin">
+      <label>Año:</label>
+        <input type="number" name="anio" class="input margin">
+      <label>Genero:</label>
+        <select class="input margin" name="genero" required>
+          <option value="">Elegir</option>
+          <option value="comedia">Comedia</option>
+          <option value="drama">Drama</option>
+          <option value="ciencia-ficcion">Ciencia-ficcion</option>
+          <option value="historica">Historica</option>
+          <option value="aventuras">Aventura</option>
+          <option value="terror">Terror</option>
+        </select>
+        <label>Sinopsis:</label>
+        <input type="text" name="sinopsis" class="sinopsis margin">
+      <label>Subir imagen:</label>
+      <input type="file" name="photo" class="input margin select">
 
-  <input type="file" name="photo" />
-
-<button type="submit" class='crear-pelicula'>Crear nueva pelicula</button>
-
+    <button type="submit" class="button-crear">Crear nueva pelicula</button>
+  </div>
 </form>
+<div class="centrar">
 
-<a href="/peliculas"><button>Volver al listado de peliculas</button></a>
+<a href="/peliculas" ><button class="button-index">Volver al listado de peliculas</button></a>
+</div>

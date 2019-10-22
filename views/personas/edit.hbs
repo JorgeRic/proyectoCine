@@ -1,21 +1,32 @@
-<h1>Modificar datos actor / actriz</h1>
 
-<h3>Nombre: {{nombre}}</h3>
-    <p>Nacionalidad: {{nacionalidad}}</p>
-    <p>Principal Pelicula: {{principalPelicula}}</p>
+<article class="article-modificar">
+    <h3 class="centrar">Nombre:{{nombre}}</h3>
+    <p><B>Nacionalidad:</B>{{nacionalidad}}</p>
+    <p><B>Peliculas:</B>
+    <p>{{principalPelicula}}</p>
+</article>
+
+<div class="centrar">
+    <h2>Modificar datos artista</h2>
+</div>
+
 
 <form method="POST" action="/actores/{{id}}">
-  <label>Cambiar nombre:
-    <input type="text" id="nombre" name="nombre" value={{nombre}}>
-  </label>
-  <label>Cambiar nacionalidad:
-    <input type="text" id="nacionalidad" name="nacionalidad" value="{{nacionalidad}}">
-  </label>
-  <label>Cambiar pelicula:
-    <input type="text" id="principalPelicula" name="principalPelicula" value="{{principalPelicula}}">
-  </label>
+  <div class="crear">
+    <label>Cambiar nombre:
+      <input type="text" id="nombre" name="nombre" value={{nombre}} class="input margin color">
+    </label>
+    <label>Cambiar nacionalidad:
+      <input type="text" id="nacionalidad" name="nacionalidad" value="{{nacionalidad}}" class="input margin color">
+    </label>
+    <label>Cambiar pelicula:
+      <input type="text" id="principalPelicula" name="principalPelicula" value="{{principalPelicula}}" class="input margin color">
+    </label>
 
-  <button type="submit">Modificar</button>
-
+    <button type="submit" class="button-crear">Modificar</button>
+  </div>
 </form>
-<a href="/actores"><button>Volver a lista de actores</button></a>
+
+<div class="centrar">
+  <a href="/actores" ><button class="button-index">Volver a lista de actores</button></a>
+</div>

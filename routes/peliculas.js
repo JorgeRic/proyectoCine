@@ -26,7 +26,7 @@ router.get('/crearPelicula', async(req, res, next)=>{
 })
 
 router.post('/', parser.single('photo'), async (req, res, next) => {
-  const { titulo, director, anio, actores, genero } = req.body;
+  const { titulo, director, anio, actores, genero, sinopsis } = req.body;
   const image = req.file.secure_url
   try{
    
@@ -36,7 +36,8 @@ router.post('/', parser.single('photo'), async (req, res, next) => {
       genero,
       actores,
       anio,
-      image
+      image,
+      sinopsis
     });
     const peliculaId = pelicula._id;
     const userId = req.session.currentUser._id;
@@ -89,13 +90,14 @@ router.get('/detail/:id', async (req, res, next) => {
 router.post('/:id', async (req, res, next) => {
   try{
     const id = req.params.id;
-    const { titulo, director, anio, actores, genero } = req.body;
+    const { titulo, director, anio, actores, genero, sinopsis } = req.body;
     const update = {
       titulo: titulo,
       director: director,
       genero: genero,
       actores: actores,
-      anio: anio
+      anio: anio,
+      sinopsis: sinopsis
     }
     await Peliculas.findByIdAndUpdate(id, update, {new: true});
     res.redirect('/users/private');

@@ -1,19 +1,23 @@
-<h1>Lista de actores / actrices</h1>
+<h2 class="title">Lista de artistas</h2>
 
 <form action="/actores/search" method="GET">
-<label for="nombre">Buscar actor</label>
-<input type="text" name="nombre" id="nombre" placeholder="buscar por nombre">
-<button type="submit">Buscar</button>
+  <div class="buscar">
+    <label for="nombre">Buscar actor</label>
+    <input type="text" name="nombre" id="nombre" placeholder="buscar por nombre" class="input">
+  <button type="submit" class="button-nav">Buscar</button>
+</div>
 </form>
-<ul>
-{{#each listaActores}}
-  <li>
-    <h3>Nombre: {{nombre}}</h3>
-    <img src="{{image}}" alt="{{nombre}}"></img>
-  <a href="/actores/about/{{_id}}"><button type="submit">Ver datos</button></a>
- 
-  </li>
-{{/each}}
+<ul class="container">
+  {{#each listaActores}}
+  <article class="article-private">
+    <li>
+      <h3 class="titulo">Nombre: {{nombre}}</h3>
+      <img src="{{image}}" alt="{{nombre}}" class="fotos"></img>
+<a href="/actores/about/{{_id}}"><button type="submit" class="verDatos">Ver datos</button></a>
+    </li>
+  </article>
+  {{/each}}
 </ul>
-<a href="/"><button>Volver a pagina principal</button></a>
-{{!-- <a href="/actores/new"><button>Crear nuevo actor</button></a> --}}
+<div class="centrar">
+<a href="/"><button class="button-index">Volver a pagina principal</button></a>
+</div>

@@ -1,11 +1,14 @@
-    <h2>Pelicula</h2>
-    
-    <h3>Titulo: {{titulo}}</h3>
-    <img src ="{{image}}" alt="{{titulo}}">
+    <h2 class="title">Pelicula</h2>
+    <article class="article-private">
+    <h3 class="titulo">Titulo: {{titulo}}</h3>
+    <img src ="{{image}}" alt="{{titulo}}" class="fotos">
     <p>Director: {{director}}</p>
     <p>Actores: {{actores}}</p>
     <p>Genero: {{genero}}</p>
     <p>Año: {{anio}}</p>
-    <p>Sinopsis: {{sinopsis}}</p>
-
-    <a href="/peliculas"><button>Volver al listado de peliculas</button></a>
+    <p>Sinopsis:</p> 
+    <p>{{sinopsis}}</p>
+    </article>
+<div class="centrar">
+    <a href="/peliculas" ><button class="button-index">Volver al listado de peliculas</button></a>
+</div>
