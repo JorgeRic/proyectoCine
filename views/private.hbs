@@ -1,37 +1,36 @@
-<h2>Private Page</h2>
 
-<p>Bienvenido {{currentUser.username}}</p>
+<p>Bienvenido {{currentUser.username}} a tu pagina privada</p>
+
+<a href="/"><button>Volver a pagina principal</button></a>
+<h4>Peliculas subidas:</h4>
+{{#each userPeliculas.peliculas}}
+<article>
+  <h5>{{titulo}}</h5>
+  <img src ="{{image}}" alt="{{titulo}}">
+    <a href="/peliculas/detail/{{_id}}"><button type="submit">Ver datos</button></a>
+    <a href="/peliculas/detail/{{_id}}/edit"><button>Modificar datos</button></a>
+    <a href="/peliculas/detail/{{_id}}/delete"><button>X Eliminar</button></a>
+</article>
+{{/each}}
 
 <h3>Añadir nueva pelicula a la lista:</h3> 
 <a href="/peliculas/crearPelicula"><button>Crear</button></a>
+<a href="/peliculas"><button>Volver al listado de peliculas</button></a>
+<h4>Artistas subidos:</h4>
+{{#each userActores.actores}}
+<article>
+  <h5>{{nombre}}</h5>
+  <img src="{{image}}" alt="{{nombre}}"></img>
+    <a href="/actores/about/{{_id}}"><button type="submit">Ver datos</button></a>
+    <a href ="/actores/about/{{_id}}/edit"><button>Modificar datos</button></a> 
+    <a href ="/actores/about/{{_id}}/delete"><button>X Eliminar</button></a> 
+</article>
+{{/each}}
 <h3>Añadir nuevo actor/actriz a la lista:</h3> 
 <a href="/actores/new"><button>Crear</button></a>
+<a href="/actores"><button class="button">Volver al listado de artistas</button></a>
 
-{{!-- <form action="/peliculas" method="POST">
-  <label>Ingrese nuevo titulo:</label>
-    <input type="text" name="titulo" required>
-  <label>Director:</label>
-    <input type="text" name="director">
-  <label>Actores:</label>
-    <input type="text" name="actores">
-  <label>Año:</label>
-    <input type="number" name="anio">
-  <label>Genero:</label>
-    <select name="genero" required>
-      <option value="">Elegir</option>
-      <option value="comedia">Comedia</option>
-      <option value="drama">Drama</option>
-      <option value="ciencia-ficcion">Ciencia-ficcion</option>
-      <option value="historica">Historica</option>
-      <option value="aventura">Aventura</option>
-      <option value="terror">Terror</option>
-      
-    </select>
-<button type="submit">Crear nueva pelicula</button> --}}
 
-</form>
-<a href="/peliculas"><button>Volver al listado de peliculas</button></a>
 
-<a href="/"><button>Volver a pagina principal</button></a>
 
 <script src="../javascripts/main.js"></script>

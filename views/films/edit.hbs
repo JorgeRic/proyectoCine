@@ -5,7 +5,7 @@
     <p>Actores: {{actores}}</p>
     <p>Genero: {{genero}}</p>
     <p>Año: {{anio}}</p>
-
+    <p>Sinopsis: {{sinopsis}}</p>
 
 <form action="/peliculas/{{id}}" method="POST">
   <label>Titulo:</label>
@@ -25,8 +25,9 @@
       <option value="historica">Historica</option>
       <option value="aventura">Aventura</option>
       <option value="terror">Terror</option>
-      
     </select>
+  <label>Psinopsis:</label>
+    <input type="text" name="sinopsis" value="{{sinopsis}}">
 <button type="submit">Modificar datos</button>
 
 </form>

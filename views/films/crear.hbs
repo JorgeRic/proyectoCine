@@ -1,6 +1,6 @@
 <h3>Añadir nueva pelicula a la lista:</h3> 
 
-<form action="/peliculas" method="POST">
+<form action="/peliculas" method="POST" enctype="multipart/form-data">
   <label>Ingrese nuevo titulo:</label>
     <input type="text" name="titulo" required>
   <label>Director:</label>
@@ -18,9 +18,14 @@
       <option value="historica">Historica</option>
       <option value="aventuras">Aventura</option>
       <option value="terror">Terror</option>
-      
     </select>
-<button type="submit">Crear nueva pelicula</button>
+    <label>Sinopsis:</label>
+    <input type="text" name="sinopsis">
+
+  <input type="file" name="photo" />
+
+<button type="submit" class='crear-pelicula'>Crear nueva pelicula</button>
 
 </form>
+
 <a href="/peliculas"><button>Volver al listado de peliculas</button></a>

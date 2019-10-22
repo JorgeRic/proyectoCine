@@ -1,6 +1,6 @@
 <h3>Crear nuevo actor / actriz</h3>
 
-<form method="POST" action="/actores">
+<form method="POST" action="/actores" enctype="multipart/form-data">
   <label>Ingrese nombre:
     <input type="text" id="nombre" name="nombre">
   </label>
@@ -10,6 +10,8 @@
   <label>Ingrese pelicula:
     <input type="text" id="principalPelicula" name="principalPelicula">
   </label>
+
+    <input type="file" name="photo" />
 
   <button type="submit">Crear</button>
 

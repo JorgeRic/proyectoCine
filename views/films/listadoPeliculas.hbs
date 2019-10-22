@@ -9,13 +9,12 @@
 {{#each peliculas}}
   <li>
     <h3>Titulo: {{titulo}}</h3>
-    {{!-- <img src="{{image}} alt="{{titulo}}"> --}}
+    <img src ="{{image}}" alt="{{titulo}}">
    
   <a href="/peliculas/detail/{{_id}}"><button type="submit">Ver datos</button></a>
  
   </li>
 {{/each}}
 </ul>
-{{!-- <a href="/peliculas/crearPelicula"><button>Crear nueva pelicula</button></a> --}}
 
 <a href="/"><button>Volver a pagina principal</button></a>

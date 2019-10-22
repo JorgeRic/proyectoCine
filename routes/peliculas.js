@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User')
 const Peliculas = require('../models/Peliculas.js');
+const parser = require('../config/cloudinary');
 
 //Vemos el listado de peliculas
 router.get('/', async (req, res, next) => {
@@ -24,8 +25,9 @@ router.get('/crearPelicula', async(req, res, next)=>{
   }
 })
 
-router.post('/', async(req, res, next) => {
+router.post('/', parser.single('photo'), async (req, res, next) => {
   const { titulo, director, anio, actores, genero } = req.body;
+  const image = req.file.secure_url
   try{
    
     const pelicula = await Peliculas.create({
@@ -33,7 +35,8 @@ router.post('/', async(req, res, next) => {
       director,
       genero,
       actores,
-      anio
+      anio,
+      image
     });
     const peliculaId = pelicula._id;
     const userId = req.session.currentUser._id;
@@ -95,7 +98,7 @@ router.post('/:id', async (req, res, next) => {
       anio: anio
     }
     await Peliculas.findByIdAndUpdate(id, update, {new: true});
-    res.redirect('/peliculas');
+    res.redirect('/users/private');
   }
   catch(error){
     next(error)
@@ -108,7 +111,7 @@ router.get('/detail/:id/delete', async (req, res, next) => {
   try{
     const id = req.params.id;
     await Peliculas.findByIdAndDelete(id);
-    res.redirect('/peliculas');
+    res.redirect('/users/private');
   }
   catch(error){
     next(error)

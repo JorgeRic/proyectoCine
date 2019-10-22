@@ -3,6 +3,8 @@
 const express = require('express');
 const router = express.Router();
 const Actores = require('../models/Actores.js')
+const User = require('../models/User')
+const parser = require('../config/cloudinary');
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
@@ -36,18 +38,20 @@ router.get('/new', async (req, res, next) => {
   }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/', parser.single('photo'), async (req, res, next) => {
   const { nombre, nacionalidad, principalPelicula } = req.body;
+  const image = req.file.secure_url
   try{
     const actor = await Actores.create({
       nombre, 
       nacionalidad, 
-      principalPelicula
+      principalPelicula,
+      image
     });
     const actorId = actor._id;
     const userId = req.session.currentUser._id;
     await User.findByIdAndUpdate(userId, { $push: { actores: actorId } })
-    res.redirect('/actores');
+    res.redirect('/users/private');
   }
   catch(error){
     next(error);
@@ -63,7 +67,7 @@ router.get('/about/:id', async (req, res, next) => {
     catch(error){
       next(error)
     }
-  })
+  })   
   
   router.get('/about/:id/edit', async (req, res, next) => {
     try {
@@ -86,7 +90,7 @@ router.get('/about/:id', async (req, res, next) => {
         principalPelicula: principalPelicula
       }
       await Actores.findByIdAndUpdate(id, update, { new: true })
-      res.redirect(`/actores`)
+      res.redirect('/users/private');
     }
     catch(error){
       next(error)
@@ -97,7 +101,7 @@ router.get('/about/:id', async (req, res, next) => {
     try{
       const id = req.params.id;
       await Actores.findByIdAndDelete(id)
-      res.redirect('/actores');
+      res.redirect('/users/private');
     }
     catch(error){
       next(error)

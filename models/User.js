@@ -17,6 +17,10 @@ const userSchema = new Schema({
   peliculas: [{
     type: ObjectId,
     ref: 'Peliculas'
+  }],
+  actores:[{
+    type: ObjectId,
+    ref: 'Actores'
   }]
 }, {
   timestamps: true

@@ -9,6 +9,8 @@ const peliculasSchema = new Schema({
   anio: {type: Number},
   director: {type: String},
   genero: {type: String, enum:['comedia', 'drama', 'ciencia-ficcion', 'historica', 'aventuras', 'terror']},
+  image: {type: String},
+  sinopsis: {type: String}
 });
 
 const Peliculas = mongoose.model('Peliculas', peliculasSchema);
