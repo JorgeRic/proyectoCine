@@ -8,6 +8,7 @@ const hbs = require('hbs');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
+// require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -19,6 +20,9 @@ const apiRouter = require('./routes/api')
 const app = express();
 
 // --
+//MONGODB_URI
+//mongodb://heroku_m127f3cc:kmss4d3pofj3t54no7bjphj3fi@ds337718.mlab.com:37718/heroku_m127f3cc
+
 mongoose.connect('mongodb://localhost/proyectocine', {
   keepAlive: true,
   useNewUrlParser: true,
