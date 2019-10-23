@@ -15,7 +15,7 @@ const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const actoresRouter = require('./routes/actores')
 const peliculasRouter = require('./routes/peliculas');
-const apiRouter = require('./routes/api')
+// const apiRouter = require('./routes/api')
 
 const app = express();
 
@@ -64,7 +64,7 @@ app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/actores', actoresRouter);
 app.use('/peliculas', peliculasRouter);
-app.use('/api', apiRouter);
+// app.use('/api', apiRouter);
 
 // -- 404 and error handler
 
