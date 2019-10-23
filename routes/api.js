@@ -15,6 +15,7 @@ router.post('/peliculas', async(req, res, next) => {
       genero,
       actores,
       anio,
+      image,
       sinopsis
     });
     const peliculaId = pelicula._id;
