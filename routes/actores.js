@@ -29,7 +29,7 @@ router.get('/search', async(req, res, next) => {
 })
 
 
-router.get('/new', async (req, res, next) => {
+router.get('/new', (req, res, next) => {
   try{
     res.render('personas/nuevoActor');
   }

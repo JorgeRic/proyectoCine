@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
 });
 
 //Creamos nuevas peliculas
-router.get('/crearPelicula', async(req, res, next)=>{
+router.get('/crearPelicula', (req, res, next)=>{
   try{
     res.render('films/crear');
   }
